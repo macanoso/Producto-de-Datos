@@ -25,7 +25,7 @@ def create_data_lake():
     from pathlib import Path
 
     parent_directory = Path(__file__).parent.parent
-    data_lake = os.mkdir(os.path.join(parent_directory, "data_lake"))
+    os.mkdir(os.path.join(parent_directory, "data_lake"))
     directory = [
         "data_lake/landing",
         "data_lake/raw",

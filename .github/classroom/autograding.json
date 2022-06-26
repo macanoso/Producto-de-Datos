@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Test 01",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint pathlib",
       "run": "python3 grader.py 01",
       "input": "",
       "output": "",
