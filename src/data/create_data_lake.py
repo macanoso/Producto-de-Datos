@@ -24,27 +24,27 @@ def create_data_lake():
     import os
     from pathlib import Path
 
-    parent_directory = Path(__file__).parent.parent
-    os.mkdir(os.path.join(parent_directory, "data_lake"))
+    os.mkdir("data_lake")
+    parent_directory = "data_lake"
     directory = [
-        "data_lake/landing",
-        "data_lake/raw",
-        "data_lake/cleansed",
-        "data_lake/business",
+        "landing",
+        "raw",
+        "cleansed",
+        "business",
     ]
 
     for d in directory:
-        os.mkdir(os.path.join(parent_directory, d))
+        os.mkdir(os.path.join("data_lake", d))
 
     dir_business = [
-        "data_lake/business/reports",
-        "data_lake/business/reports/figures",
-        "data_lake/business/features",
-        "data_lake/business/forecasts",
+        "business/reports",
+        "business/reports/figures",
+        "business/features",
+        "business/forecasts",
     ]
 
     for d in dir_business:
-        os.mkdir(os.path.join(parent_directory, d))
+        os.mkdir(os.path.join("data_lake", d))
 
 
 if __name__ == "__main__":
