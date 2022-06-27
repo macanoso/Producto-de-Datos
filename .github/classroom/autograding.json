@@ -22,7 +22,7 @@
     },
     {
       "name": "Test 03",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint openpyxl",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint openpyxl xlrd",
       "run": "python3 grader.py 03",
       "input": "",
       "output": "",
