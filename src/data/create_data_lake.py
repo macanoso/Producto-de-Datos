@@ -22,7 +22,6 @@ def create_data_lake():
 
     """
     import os
-    from pathlib import Path
 
     os.mkdir("data_lake")
     parent_directory = "data_lake"
