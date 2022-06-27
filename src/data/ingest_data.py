@@ -31,12 +31,13 @@ def ingest_data():
     ]
 
     for i in urls_xlsx:
-        """save the url in the landing folder"""
         file = requests.get(i)
         open("data_lake/landing/{}".format(i.split("/")[-1]), "wb").write(file.content)
 
     for i in range(2016, 2018):
-        url_xls = "https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true"
+        url_xls = "https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true".format(
+            i
+        )
         file = requests.get(url_xls, allow_redirects=True)
         open("data_lake/landing/{}.xls".format(i), "wb").write(file.content)
 
