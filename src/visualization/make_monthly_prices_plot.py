@@ -10,7 +10,7 @@ def make_monthly_prices_plot():
     import matplotlib.pyplot as plt
     import pandas as pd
 
-    path_file = "../data/data_lake/business/precios-mensuales.csv"
+    path_file = r"data_lake/business/precios-mensuales.csv"
 
     monthly_data = pd.read_csv(path_file)
     monthly_data["fecha"] = pd.to_datetime(monthly_data["fecha"])
