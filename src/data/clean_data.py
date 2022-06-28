@@ -14,15 +14,13 @@ def clean_data():
     """
     import pandas as pd
     import os
-
-    path = "data_lake/raw"
-    FichList = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    import glob
 
     cleansed_df = []
 
-    for f in FichList:
+    for f in range(1995, 2022):
         df_read = pd.read_csv(
-            "data_lake/raw/{}".format(f),
+            "data_lake/raw/{}.csv".format(f),
         )
         cleansed_df.append(df_read)
 

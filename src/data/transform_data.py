@@ -13,13 +13,10 @@ def transform_data():
     import pandas as pd
     import os
 
-    path = "data_lake/landing"
-    FichList = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
-
-    for f in FichList:
-        if f.split(".")[1] == "xlsx":
+    for f in range(1995, 2022):
+        if f == 2016 or f == 2017:
             df_read = pd.read_excel(
-                "data_lake/landing/{}".format(f),
+                "data_lake/landing/{}.xls".format(f),
                 index_col=None,
                 header=None,
             )
@@ -28,14 +25,14 @@ def transform_data():
             df_read = df_read[df_read.columns[0:25]]
             df_read[0] = pd.to_datetime(df_read[0], format="%Y/%m/%d")
             df_read.to_csv(
-                "data_lake/raw/{}.csv".format(f.split(".")[0]),
+                "data_lake/raw/{}.csv".format(f),
                 encoding="utf-8",
                 index=False,
                 header=True,
             )
         else:
             df_read = pd.read_excel(
-                "data_lake/landing/{}".format(f),
+                "data_lake/landing/{}.xlsx".format(f),
                 index_col=None,
                 header=None,
             )
@@ -44,7 +41,7 @@ def transform_data():
             df_read = df_read[df_read.columns[0:25]]
             df_read[0] = pd.to_datetime(df_read[0], format="%Y/%m/%d")
             df_read.to_csv(
-                "data_lake/raw/{}.csv".format(f.split(".")[0]),
+                "data_lake/raw/{}.csv".format(f),
                 encoding="utf-8",
                 index=False,
                 header=True,
