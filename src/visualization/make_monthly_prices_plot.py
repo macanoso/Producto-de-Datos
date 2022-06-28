@@ -26,7 +26,7 @@ def make_monthly_prices_plot():
 
     mean = monthly_data["precio"].mean()
     plt.axhline(mean, color="r", linestyle="--")
-    plt.savefig("../data/data_lake/business/reports/figures/monthly_prices.png")
+    plt.savefig("data/data_lake/business/reports/figures/monthly_prices.png")
 
 
 if __name__ == "__main__":
