@@ -1,30 +1,22 @@
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-f-string
+"""
+Esta función se encarga de crear el data lake con las subcarpetas necesarias
+"""
+
+
 def create_data_lake():
     """Cree el data lake con sus capas.
 
     Esta función debe crear la carpeta `data_lake` en la raiz del proyecto. El data lake contiene
     las siguientes subcarpetas:
 
-    ```
-    .
-    |
-    \___ data_lake/
-         |___ landing/
-         |___ raw/
-         |___ cleansed/
-         \___ business/
-              |___ reports/
-              |    |___ figures/
-              |___ features/
-              |___ forecasts/
-
-    ```
-
-
     """
+
     import os
 
     os.mkdir("data_lake")
-    parent_directory = "data_lake"
+
     directory = [
         "landing",
         "raw",
@@ -32,8 +24,8 @@ def create_data_lake():
         "business",
     ]
 
-    for d in directory:
-        os.mkdir(os.path.join("data_lake", d))
+    for carpet in directory:
+        os.mkdir(os.path.join("data_lake", carpet))
 
     dir_business = [
         "business/reports",
@@ -42,8 +34,8 @@ def create_data_lake():
         "business/forecasts",
     ]
 
-    for d in dir_business:
-        os.mkdir(os.path.join("data_lake", d))
+    for carpet in dir_business:
+        os.mkdir(os.path.join("data_lake", carpet))
 
 
 if __name__ == "__main__":

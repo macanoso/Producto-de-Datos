@@ -1,7 +1,9 @@
+# pylint: disable=consider-using-f-string
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-with
+# pylint: disable=line-too-long
 """
 Módulo de ingestión de datos.
--------------------------------------------------------------------------------
-
 """
 
 
@@ -20,8 +22,8 @@ def ingest_data():
 
     url = "https://github.com/jdvelasq/datalabs/tree/master/datasets/precio_bolsa_nacional/xls"
 
-    r = requests.get(url)
-    html_doc = r.text
+    requested_url = requests.get(url)
+    html_doc = requested_url.text
     soup = BeautifulSoup(html_doc, features="html.parser")
     a_tags = soup.find_all("a")
     urls_xlsx = [
