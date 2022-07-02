@@ -1,3 +1,9 @@
+"""
+construcción de la gráfica
+
+"""
+# pylint: disable=import-outside-toplevel
+# pylint: disable=unused-variable
 def make_daily_prices_plot():
     """Crea un grafico de lines que representa los precios promedios diarios.
 

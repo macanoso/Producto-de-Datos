@@ -123,7 +123,7 @@
     {
       "name": "Test 13",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "pylint",
+      "run": "pylint *.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -173,7 +173,7 @@
     {
       "name": "Test 18",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "python3 src/data/create_data_lake.py",
+      "run": "rm -rf data_lake | python3 src/data/create_data_lake.py",
       "input": "",
       "output": "",
       "comparison": "included",

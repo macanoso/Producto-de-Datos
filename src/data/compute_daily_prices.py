@@ -1,3 +1,10 @@
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-f-string
+"""
+Precios diarios de la energia
+"""
+
+
 def compute_daily_prices():
     """Compute los precios promedios diarios.
 
@@ -13,7 +20,6 @@ def compute_daily_prices():
 
     """
     import pandas as pd
-    import os
 
     file = "data_lake/cleansed/precios-horarios.csv"
     mean_price = pd.read_csv(file)

@@ -1,7 +1,15 @@
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-f-string
+"""
+Limpieza de los datos
+"""
+
+
 def clean_data():
     """Realice la limpieza y transformación de los archivos CSV.
 
-    Usando los archivos data_lake/raw/*.csv, cree el archivo data_lake/cleansed/precios-horarios.csv.
+    Usando los archivos data_lake/raw/*.csv, cree el archivo
+    data_lake/cleansed/precios-horarios.csv.
     Las columnas de este archivo son:
 
     * fecha: fecha en formato YYYY-MM-DD
@@ -13,14 +21,12 @@ def clean_data():
 
     """
     import pandas as pd
-    import os
-    import glob
 
     cleansed_df = []
 
-    for f in range(1995, 2022):
+    for year in range(1995, 2022):
         df_read = pd.read_csv(
-            "data_lake/raw/{}.csv".format(f),
+            "data_lake/raw/{}.csv".format(year),
         )
         cleansed_df.append(df_read)
 
