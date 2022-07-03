@@ -1,9 +1,7 @@
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
 """
 Módulo de ingestión de datos.
+Se leen los datos del repo jdvelasq, mediante web scrapping
+se obtienen todos los archivos y se almacenan
 """
 
 

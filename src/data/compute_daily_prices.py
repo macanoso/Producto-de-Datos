@@ -1,7 +1,5 @@
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-f-string
 """
-Precios diarios de la energia
+Precios diarios de la energia a nivel mensual
 """
 
 

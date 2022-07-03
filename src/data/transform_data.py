@@ -1,7 +1,7 @@
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-f-string
 """
 Transformacion de los datos
+La transformación consiste de la lectura de los datos y posterior
+se almacenan en archivos csv
 """
 
 

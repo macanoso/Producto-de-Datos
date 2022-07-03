@@ -11,8 +11,6 @@ En luigi llame las funciones que ya creo.
 
 
 """
-# pylint: disable=import-outside-toplevel
-# pylint: disable=unused-variable
 
 import luigi
 from luigi import Task, LocalTarget

@@ -1,7 +1,6 @@
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-f-string
 """
 Esta función se encarga de crear el data lake con las subcarpetas necesarias
+Las carpetas son: landing, raw, cleansed y businnes
 """
 
 

@@ -1,7 +1,7 @@
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-f-string
 """
-Limpieza de los datos
+Limpieza de los datos de la tabla unica de precios horarios. 
+Se obtiene primero la union de todos los archivos de precios horarios.
+Y se une en un unico archivo.
 """
 
 
