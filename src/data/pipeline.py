@@ -11,10 +11,8 @@ En luigi llame las funciones que ya creo.
 
 
 """
-
 import luigi
 from luigi import Task, LocalTarget
-import create_data_lake
 import ingest_data
 import transform_data
 import clean_data
@@ -60,7 +58,7 @@ class daily_reports_pipeline(Task):
         return clean_data_pipeline()
 
     def output(self):
-        return LocalTarget("data_lake/business/")
+        return LocalTarget("data_lake/business/precios-dia.csv")
 
     def run(self):
         with self.output().open("w") as outfile:
@@ -72,7 +70,7 @@ class monthly_reports_pipeline(Task):
         return clean_data_pipeline()
 
     def output(self):
-        return LocalTarget("data_lake/business/")
+        return LocalTarget("data_lake/business/precios-mes.csv")
 
     def run(self):
         with self.output().open("w") as outfile:
