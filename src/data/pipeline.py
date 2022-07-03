@@ -16,6 +16,12 @@ En luigi llame las funciones que ya creo.
 
 import luigi
 from luigi import Task, LocalTarget
+import create_data_lake
+import ingest_data
+import transform_data
+import clean_data
+import compute_daily_prices
+import compute_monthly_prices
 
 
 class ingest_data_pipeline(Task):
@@ -24,7 +30,7 @@ class ingest_data_pipeline(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            ingest_data()
+            ingest_data.ingest_data()
 
 
 class transform_data_pipeline(Task):
@@ -36,7 +42,7 @@ class transform_data_pipeline(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            transform_data()
+            transform_data.transform_data()
 
 
 class clean_data_pipeline(Task):
@@ -48,7 +54,7 @@ class clean_data_pipeline(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            clean_data()
+            clean_data.clean_data()
 
 
 class daily_reports_pipeline(Task):
@@ -60,7 +66,7 @@ class daily_reports_pipeline(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            compute_daily_prices()
+            compute_daily_prices.compute_daily_prices()
 
 
 class monthly_reports_pipeline(Task):
@@ -72,7 +78,7 @@ class monthly_reports_pipeline(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            compute_monthly_prices()
+            compute_monthly_prices.compute_monthly_prices()
 
 
 class reports_prices(Task):
