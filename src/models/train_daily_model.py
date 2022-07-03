@@ -1,3 +1,9 @@
+"""
+construcción de la gráfica
+
+"""
+
+
 def train_daily_model():
     """Entrena el modelo de pronóstico de precios diarios.
 

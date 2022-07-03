@@ -1,3 +1,9 @@
+"""
+construcción de la gráfica
+
+"""
+
+
 def make_forecasts():
     """Construya los pronosticos con el modelo entrenado final.
 
