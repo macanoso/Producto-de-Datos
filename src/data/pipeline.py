@@ -60,7 +60,7 @@ class daily_reports_pipeline(Task):
         return clean_data_pipeline()
 
     def output(self):
-        return LocalTarget("data_lake/business/precios-dia.csv")
+        return LocalTarget("data_lake/business/")
 
     def run(self):
         with self.output().open("w") as outfile:
@@ -72,7 +72,7 @@ class monthly_reports_pipeline(Task):
         return clean_data_pipeline()
 
     def output(self):
-        return LocalTarget("data_lake/business/precios-mes.csv")
+        return LocalTarget("data_lake/business/")
 
     def run(self):
         with self.output().open("w") as outfile:

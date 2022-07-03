@@ -1,3 +1,9 @@
+"""
+Se guarda el archivo para el entrenamiento del modelo.
+
+"""
+
+
 def make_features():
     """Prepara datos para pronóstico.
 
@@ -12,10 +18,22 @@ def make_features():
     analizar y determinar las variables explicativas del modelo.
 
     """
-    raise NotImplementedError("Implementar esta función")
+    import pandas as pd
+
+    datos_precios_diarios = pd.read_csv(
+        "data_lake/business/precios-diarios.csv", index_col=0
+    )
+
+    datos_precios_diarios.to_csv(
+        "data_lake/business/features/precios-diarios.csv",
+        encoding="utf-8",
+        index=True,
+    )
 
 
 if __name__ == "__main__":
     import doctest
+
+    make_features()
 
     doctest.testmod()
