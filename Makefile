@@ -47,4 +47,3 @@ train_model:
 
 make_forecasts:
 	python3 src/models/make_forecasts.py
-
