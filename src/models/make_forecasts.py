@@ -47,7 +47,6 @@ def make_forecasts():
 
     datos_precios_diarios["Prediction"] = prediction
 
-    os.mkdir("data_lake/business/forecasts/")
     datos_precios_diarios.to_csv(
         "data_lake/business/forecasts/precios-diarios.csv",
     )
