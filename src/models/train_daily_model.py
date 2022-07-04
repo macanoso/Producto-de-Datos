@@ -27,7 +27,7 @@ def train_daily_model():
     """
 
     datos_precios_diarios = pd.read_csv(
-        "data_lake/business/features/precios-diarios.csv", index_col=0
+        "data_lake/business/features/precios_diarios.csv", index_col=0
     )
 
     datos_precios_diarios.index = pd.to_datetime(datos_precios_diarios.index)
