@@ -36,6 +36,8 @@ def create_data_lake():
     for carpet in dir_business:
         os.mkdir(os.path.join("data_lake", carpet))
 
+    os.mkdir("data_lake/business/forecasts/")
+
 
 if __name__ == "__main__":
     import doctest

@@ -42,7 +42,7 @@ def make_forecasts():
     X = df_lags.copy().drop(columns=[0])
     y = df_lags.copy().iloc[:, [0]]
 
-    model_gs = pickle.load(open("precios-diarios.pkl", "rb"))
+    model_gs = pickle.load(open("src/models/precios-diarios.pkl", "rb"))
     prediction = model_gs.predict(X)
 
     datos_precios_diarios["Prediction"] = prediction
