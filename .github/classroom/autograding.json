@@ -102,7 +102,7 @@
     },
     {
       "name": "Test 11",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint pickle",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
       "run": "python3 grader.py 11",
       "input": "",
       "output": "",
