@@ -1,3 +1,7 @@
+"""
+Esta funciona testea el promedio de los precios de los productos
+"""
+
 import pytest
 import pandas as pd
 
