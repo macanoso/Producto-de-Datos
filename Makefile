@@ -7,7 +7,7 @@
 .PHONY: make_daily_prices_plot
 .PHONY: make_monthly_prices_plot
 .PHONY: make_features
-.PHONY: train_model
+.PHONY: train_daily_model
 .PHONY: make_forecasts
 
 create_data_lake:
