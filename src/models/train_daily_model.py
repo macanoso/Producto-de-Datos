@@ -47,7 +47,7 @@ def train_daily_model():
         X,
         y,
         test_size=0.3,
-        random_state=1234567,
+        random_state=123456,
     )
 
     pipeline = Pipeline(
