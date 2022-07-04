@@ -50,35 +50,13 @@ def train_daily_model():
         random_state=123456,
     )
 
-    pipeline = Pipeline(
-        steps=[
-            ("Standard", StandardScaler()),
-            (
-                "PCA",
-                PCA(n_components=10),
-            ),
-            (
-                "RandomForestRegressor",
-                RandomForestRegressor(n_jobs=-1, random_state=1),
-            ),
-        ],
+    random_model = RandomForestRegressor(
+        n_estimators=500, max_features="auto", random_state=1, n_jobs=-1
     )
-    param_grid = {
-        "RandomForestRegressor__n_estimators": [200, 500],
-        "RandomForestRegressor__max_features": ["auto", "sqrt", "log2"],
-    }
+    random_model.fit(X_train, y_train)
+    r2_score(y_test, random_model.predict(X_test))
 
-    gridSearchCV = GridSearchCV(
-        estimator=pipeline,
-        param_grid=param_grid,
-        cv=5,
-        scoring="neg_mean_squared_error",
-        refit=True,
-        return_train_score=True,
-    )
-    gridSearchCV.fit(X_train, y_train)
-    r2_score(y_test, gridSearchCV.predict(X_test))
-    pickle.dump(gridSearchCV, open("src/models/precios-diarios.pkl", "wb"))
+    pickle.dump(random_model, open("src/models/precios-diarios.pkl", "wb"))
 
 
 if __name__ == "__main__":
